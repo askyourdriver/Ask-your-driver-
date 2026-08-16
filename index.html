@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<!--
+═══════════════════════════════════════════════════════════
+ASKYOURDRIVER.COM — ASHEVILLE — SETUP CHECKLIST
+1. AdSense: apply at adsense.google.com, then paste your
+   script tag where marked "ADSENSE" below (2 places + head).
+2. Affiliates: join these, then replace links marked TODO:
+   • Viator (travelpayouts.com or viator.com/partner) — tours
+   • GetYourGuide Partner — tours (alternative)
+   • Booking.com Affiliate Partner — hotels
+3. Tips: replace # in Venmo/Cash App buttons with your links
+   (venmo.com/u/YourHandle, cash.app/$YourHandle).
+4. Sponsors: the "Featured" card shows businesses what they
+   get for a monthly fee. Swap in a real sponsor when sold.
+═══════════════════════════════════════════════════════════
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<title>AskYourDriver — Asheville | Local Picks from the Front Seat</title>
+<meta name="description" content="Real Asheville recommendations from your rideshare driver: where locals eat, drink, hike, and hear live music — plus the tours actually worth booking.">
+<!-- ADSENSE: paste your AdSense <script> tag here after approval -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: dark;
+  --bg:#16222B;          /* page background */
+  --card:#233742;        /* card surface */
+  --card-edge:#314855;   /* card border */
+  --text:#EDF3F2;        /* primary text — light */
+  --text-soft:#B8C9C6;   /* secondary text — still light */
+  --amber:#E8B76B;       /* accent */
+  --amber-deep:#D99A3F;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{font-family:'Karla',sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
+a{color:var(--amber)}
+
+/* ---------- HERO ---------- */
+.hero{background:linear-gradient(180deg,#101A21 0%,#16222B 55%,#1D2E38 100%);color:var(--text);padding:2.5rem 1.25rem 0;text-align:center;position:relative;overflow:hidden}
+.hero-inner{max-width:640px;margin:0 auto;position:relative;z-index:2}
+.brand{font-family:'Zilla Slab',serif;font-weight:700;font-size:1rem;letter-spacing:.02em;color:var(--text);text-decoration:none}
+.brand span{color:var(--amber)}
+.eyebrow{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);font-weight:700;margin-top:1.5rem}
+.hero h1{font-family:'Zilla Slab',serif;font-weight:700;font-size:clamp(2rem,8vw,3rem);line-height:1.1;margin:.6rem 0 1rem;color:#FFFFFF}
+.hero p{color:var(--text-soft);font-size:1.02rem;max-width:36ch;margin:0 auto 1.5rem}
+.ridge-svg{display:block;width:100%;height:auto;margin-top:1.5rem}
+
+/* ---------- NAV CHIPS ---------- */
+.chips{display:flex;gap:.5rem;overflow-x:auto;padding:1rem 1.25rem;position:sticky;top:0;background:#101A21;z-index:10;border-bottom:1px solid var(--card-edge);-webkit-overflow-scrolling:touch}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;font-size:.85rem;font-weight:700;text-decoration:none;color:var(--text);background:var(--card);border:1.5px solid var(--card-edge);border-radius:999px;padding:.5rem .95rem;white-space:nowrap}
+.chip:active{background:var(--amber);border-color:var(--amber);color:#16222B}
+
+/* ---------- SECTIONS ---------- */
+main{max-width:640px;margin:0 auto;padding:0 1.25rem 3rem}
+section{padding-top:2.25rem}
+.blaze{display:inline-block;width:12px;height:18px;border-radius:2px;margin-right:.55rem;vertical-align:-2px}
+h2{font-family:'Zilla Slab',serif;font-weight:600;font-size:1.55rem;margin-bottom:.35rem;color:#FFFFFF}
+.section-note{color:var(--text-soft);font-size:.92rem;margin-bottom:1rem}
+.rec{background:var(--card);border:1px solid var(--card-edge);border-radius:12px;padding:1rem 1.1rem;margin-bottom:.75rem;position:relative}
+.rec h3{font-family:'Zilla Slab',serif;font-weight:600;font-size:1.12rem;color:#FFFFFF}
+.rec .hood{font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--amber)}
+.rec p{font-size:.95rem;margin-top:.35rem;color:var(--text)}
+.rec a.maps,.rec a.book{display:inline-block;margin-top:.55rem;font-size:.85rem;font-weight:700;text-decoration:none}
+.rec a.book{background:var(--amber);color:#16222B;border-radius:999px;padding:.5rem 1rem;margin-right:.5rem}
+
+/* ---------- FEATURED / SPONSOR ---------- */
+.rec.featured{border:2px solid var(--amber);background:#2C3E2F}
+.badge{position:absolute;top:-.65rem;right:1rem;background:var(--amber);color:#16222B;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:.2rem .7rem}
+
+/* ---------- AD SLOTS ---------- */
+.ad-slot{margin:2rem 0 0;padding:1.25rem;text-align:center;background:var(--card);border:1.5px dashed var(--card-edge);border-radius:12px;color:var(--text-soft);font-size:.8rem;letter-spacing:.05em;text-transform:uppercase}
+
+/* ---------- TIP / FOOTER ---------- */
+.tip{margin-top:3rem;background:var(--card);border:2px solid var(--amber);color:var(--text);border-radius:16px;padding:1.75rem 1.4rem;text-align:center}
+.tip h2{color:#FFFFFF}
+.tip p{color:var(--text-soft);font-size:.95rem;margin:.5rem 0 1.1rem}
+.tip-btn{display:inline-block;background:var(--amber);color:#16222B;font-weight:700;text-decoration:none;border-radius:999px;padding:.8rem 1.6rem;margin:0 .3rem .5rem}
+footer{text-align:center;padding:2rem 1.25rem 3rem;font-size:.8rem;color:var(--text-soft);max-width:640px;margin:0 auto}
+footer a{color:var(--amber)}
+.chip:focus-visible,a:focus-visible,.tip-btn:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <a class="brand" href="https://askyourdriver.com">Ask<span>Your</span>Driver</a>
+    <div class="eyebrow">Asheville Edition</div>
+    <h1>You Just Asked Me<br>Where to Go.</h1>
+    <p>Here's the full answer — the spots I actually send people to, and the tours actually worth your money.</p>
+  </div>
+  <svg class="ridge-svg" viewBox="0 0 800 120" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,80 Q100,30 200,65 T400,50 T600,70 T800,40 L800,120 L0,120 Z" fill="#314855" opacity="0.6"/>
+    <path d="M0,95 Q120,55 260,85 T520,75 T800,90 L800,120 L0,120 Z" fill="#233742" opacity="0.9"/>
+    <path d="M0,105 Q150,80 320,100 T650,95 T800,105 L800,120 L0,120 Z" fill="#16222B"/>
+  </svg>
+</header>
+
+<nav class="chips" aria-label="Categories">
+  <a class="chip" href="#tours">🎟️ Tours</a>
+  <a class="chip" href="#eat">🍴 Eat</a>
+  <a class="chip" href="#beer">🍺 Beer</a>
+  <a class="chip" href="#coffee">☕ Coffee</a>
+  <a class="chip" href="#outdoors">⛰️ Outdoors</a>
+  <a class="chip" href="#music">🎸 Music</a>
+  <a class="chip" href="#stay">🛏️ Stay</a>
+</nav>
+
+<main>
+
+  <!-- TOURS FIRST: highest affiliate commission, highest intent for visitors -->
+  <section id="tours">
+    <h2><span class="blaze" style="background:#E8B76B"></span>Worth Booking</h2>
+    <p class="section-note">Tours my passengers rave about on the ride back. Booking through these links supports the site at no extra cost to you.</p>
+    <article class="rec">
+      <div class="hood">Downtown · ~90 min</div>
+      <h3>LaZoom Comedy Bus Tour</h3>
+      <p>The purple bus you'll see downtown. Half city tour, half comedy show — bring your own beer aboard.</p>
+      <a class="book" href="https://www.viator.com/searchResults/all?text=lazoom+asheville">Book tour →</a><!-- TODO: replace with your Viator affiliate link -->
+    </article>
+    <article class="rec">
+      <div class="hood">South of town · Half day+</div>
+      <h3>Biltmore Estate</h3>
+      <p>America's largest home. Yes it's pricey, yes it's worth it — book ahead, gate prices are worse.</p>
+      <a class="book" href="https://www.viator.com/searchResults/all?text=biltmore+estate">Get tickets →</a><!-- TODO: replace with your Viator affiliate link -->
+    </article>
+    <article class="rec">
+      <div class="hood">Pickup downtown · ~4 hrs</div>
+      <h3>Guided Waterfall Hike</h3>
+      <p>They handle the driving and the trail picks. Best option if you're here without a car.</p>
+      <a class="book" href="https://www.viator.com/searchResults/all?text=asheville+waterfall+tour">See tours →</a><!-- TODO: replace with your Viator affiliate link -->
+    </article>
+  </section>
+
+  <div class="ad-slot">Ad — Google AdSense slot<!-- ADSENSE: replace this div with your ad unit code --></div>
+
+  <section id="eat">
+    <h2><span class="blaze" style="background:#D99A3F"></span>Where to Eat</h2>
+    <p class="section-note">Skip the tourist traps on the main drag. These are worth the wait.</p>
+    <article class="rec featured">
+      <span class="badge">Featured</span>
+      <div class="hood">Your Neighborhood Here</div>
+      <h3>This Spot Could Be Yours</h3>
+      <p>Local businesses: get in front of visitors the moment they arrive. One featured card per section. <a href="mailto:hello@askyourdriver.com">Ask about featuring →</a></p>
+    </article>
+    <article class="rec">
+      <div class="hood">Downtown</div>
+      <h3>Jazmin</h3>
+      <p>Thai and Southeast Asian done right — locals fight over the dumplings. One of the highest-rated kitchens in town.</p>
+      <a class="maps" href="https://maps.google.com/?q=JAZMIN+22+College+St+Asheville">Open in Maps →</a>
+    </article>
+    <article class="rec">
+      <div class="hood">South Slope</div>
+      <h3>Little Chango</h3>
+      <p>Latin American counter spot — arepas, ropa vieja, fried plantains. Cheap, fast, and absurdly good for the price.</p>
+      <a class="maps" href="https://maps.google.com/?q=Little+Chango+134+Coxe+Ave+Asheville">Open in Maps →</a>
+    </article>
+    <article class="rec">
+      <div class="hood">Downtown</div>
+      <h3>Cúrate</h3>
+      <p>Spanish tapas, the fancy-night-out pick. Book ahead — I've dropped off a lot of disappointed walk-ins.</p>
+      <a class="maps" href="https://maps.google.com/?q=Curate+Asheville">Open in Maps →</a>
+    </article>
+  </section>
+
+  <section id="beer">
+    <h2><span class="blaze" style="background:#7FA8A0"></span>Breweries</h2>
+    <p class="section-note">More breweries per capita than almost anywhere in the country. Start here — or let someone else drive:</p>
+    <article class="rec">
+      <div class="hood">Multiple stops · ~3 hrs</div>
+      <h3>Brewery Tour (Guided)</h3>
+      <p>Hit 3–4 breweries with a designated driver and skip the logistics. Popular with groups.</p>
+      <a class="book" href="https://www.viator.com/searchResults/all?text=asheville+brewery+tour">Book tour →</a><!-- TODO: replace with your Viator affiliate link -->
+    </article>
+    <article class="rec">
+      <div class="hood">South Slope</div>
+      <h3>Burial Beer Co.</h3>
+      <p>Locals' favorite. Great saisons and stouts, scythe on the wall, food trucks out front.</p>
+      <a class="maps" href="https://maps.google.com/?q=Burial+Beer+Co+Asheville">Open in Maps →</a>
+    </article>
+    <article class="rec">
+      <div class="hood">East Asheville</div>
+      <h3>Highland Brewing</h3>
+      <p>Asheville's original craft brewery — huge campus with live music, food trucks, volleyball, even free disc golf. Bring the whole crew.</p>
+      <a class="maps" href="https://maps.google.com/?q=Highland+Brewing+Company+Asheville">Open in Maps →</a>
+    </article>
+  </section>
+
+  <div class="ad-slot">Ad — Google AdSense slot<!-- ADSENSE: replace this div with your ad unit code --></div>
+
+  <section id="coffee">
+    <h2><span class="blaze" style="background:#B98A62"></span>Coffee</h2>
+    <article class="rec">
+      <div class="hood">Downtown</div>
+      <h3>Double D's Coffee & Desserts</h3>
+      <p>Coffee served out of a double-decker London bus. Touristy? Yes. Worth the photo and the latte? Also yes.</p>
+      <a class="maps" href="https://maps.google.com/?q=Double+Ds+Coffee+Asheville">Open in Maps →</a>
+    </article>
+    <article class="rec">
+      <div class="hood">Downtown</div>
+      <h3>Rowan Coffee</h3>
+      <p>Serious coffee in a beautiful vintage room — the baristas weigh every shot. Where I'd send a coffee snob.</p>
+      <a class="maps" href="https://maps.google.com/?q=Rowan+Coffee+66+Broadway+St+Asheville">Open in Maps →</a>
+    </article>
+  </section>
+
+  <section id="outdoors">
+    <h2><span class="blaze" style="background:#8FBF9F"></span>Outdoors</h2>
+    <p class="section-note">You came for the mountains. Don't leave without one of these.</p>
+    <article class="rec">
+      <div class="hood">45 min — Blue Ridge Parkway</div>
+      <h3>Craggy Gardens</h3>
+      <p>Short walk, huge payoff. June rhododendron blooms are unreal. Bring a layer — it's always 10° cooler up there.</p>
+      <a class="maps" href="https://maps.google.com/?q=Craggy+Gardens">Open in Maps →</a>
+    </article>
+    <article class="rec">
+      <div class="hood">40 min — Old Fort</div>
+      <h3>Catawba Falls</h3>
+      <p>Rebuilt trail with staircases up the falls. Easy enough for kids, pretty enough for everyone.</p>
+      <a class="maps" href="https://maps.google.com/?q=Catawba+Falls">Open in Maps →</a>
+    </article>
+  </section>
+
+  <section id="music">
+    <h2><span class="blaze" style="background:#C58BAF"></span>Live Music</h2>
+    <article class="rec">
+      <div class="hood">Downtown</div>
+      <h3>The Orange Peel</h3>
+      <p>The legendary room. Check the calendar — big names play this small stage all the time.</p>
+      <a class="maps" href="https://maps.google.com/?q=Orange+Peel+Asheville">Open in Maps →</a>
+    </article>
+    <article class="rec">
+      <div class="hood">East Asheville</div>
+      <h3>The Grey Eagle</h3>
+      <p>Listening-room vibe, great sound, tacos in the back. My pick for a low-key night.</p>
+      <a class="maps" href="https://maps.google.com/?q=Grey+Eagle+Asheville">Open in Maps →</a>
+    </article>
+  </section>
+
+  <section id="stay">
+    <h2><span class="blaze" style="background:#7F9DC5"></span>Still Need a Place?</h2>
+    <p class="section-note">Extending the trip or plans fell through — it happens more than you'd think.</p>
+    <article class="rec">
+      <div class="hood">All of Asheville</div>
+      <h3>Find a Room Tonight</h3>
+      <p>Compare downtown hotels, mountain cabins, and last-minute deals.</p>
+      <a class="book" href="https://www.booking.com/city/us/asheville.html">Search stays →</a><!-- TODO: replace with your Booking.com affiliate link -->
+    </article>
+  </section>
+
+  <div class="tip">
+    <h2>Enjoyed the ride?</h2>
+    <p>This list is free — tips keep it (and me) running. Safe travels.</p>
+    <a class="tip-btn" href="#">Tip on Venmo</a><!-- TODO: venmo.com/u/YourHandle -->
+    <a class="tip-btn" href="#">Cash App</a><!-- TODO: cash.app/$YourHandle -->
+  </div>
+
+</main>
+
+<footer>
+  AskYourDriver.com — made by your driver, an Asheville local.<br>
+  Some links are affiliate links and may earn a commission at no cost to you. It never changes what I recommend.<br>
+  Drive rideshare in another city? <a href="mailto:hello@askyourdriver.com">Get your own AskYourDriver page →</a>
+</footer>
+
+</body>
+</html>
