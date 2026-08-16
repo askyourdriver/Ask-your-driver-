@@ -22,6 +22,7 @@ ASKYOURDRIVER.COM — ASHEVILLE — SETUP CHECKLIST
 <title>AskYourDriver — Asheville | Local Picks from the Front Seat</title>
 <meta name="description" content="Real Asheville recommendations from your rideshare driver: where locals eat, drink, hike, and hear live music — plus the tours actually worth booking.">
 <!-- ADSENSE: paste your AdSense <script> tag here after approval -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 380 380'%3E%3Crect width='380' height='380' rx='76' fill='%2316222B'/%3E%3Ccircle cx='190' cy='190' r='135' fill='none' stroke='%23E8B76B' stroke-width='14'/%3E%3Ccircle cx='190' cy='190' r='92' fill='none' stroke='%23EDF3F2' stroke-width='16'/%3E%3Cline x1='158' y1='178' x2='108' y2='160' stroke='%23EDF3F2' stroke-width='16'/%3E%3Cline x1='222' y1='178' x2='272' y2='160' stroke='%23EDF3F2' stroke-width='16'/%3E%3Cpolygon points='162,194 218,194 190,278' fill='%23E8B76B'/%3E%3Ccircle cx='190' cy='184' r='34' fill='%23E8B76B'/%3E%3Ccircle cx='190' cy='184' r='13' fill='%2316222B'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
@@ -45,7 +46,8 @@ a{color:var(--amber)}
 /* ---------- HERO ---------- */
 .hero{background:linear-gradient(180deg,#101A21 0%,#16222B 55%,#1D2E38 100%);color:var(--text);padding:2.5rem 1.25rem 0;text-align:center;position:relative;overflow:hidden}
 .hero-inner{max-width:640px;margin:0 auto;position:relative;z-index:2}
-.brand{font-family:'Zilla Slab',serif;font-weight:700;font-size:1rem;letter-spacing:.02em;color:var(--text);text-decoration:none}
+.brand{font-family:'Zilla Slab',serif;font-weight:700;font-size:1.05rem;letter-spacing:.02em;color:var(--text);text-decoration:none;display:inline-flex;align-items:center;gap:.55rem;justify-content:center}
+.brand svg{width:44px;height:44px;flex:0 0 auto}
 .brand span{color:var(--amber)}
 .eyebrow{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);font-weight:700;margin-top:1.5rem}
 .hero h1{font-family:'Zilla Slab',serif;font-weight:700;font-size:clamp(2rem,8vw,3rem);line-height:1.1;margin:.6rem 0 1rem;color:#FFFFFF}
@@ -92,7 +94,18 @@ footer a{color:var(--amber)}
 
 <header class="hero">
   <div class="hero-inner">
-    <a class="brand" href="https://askyourdriver.com">Ask<span>Your</span>Driver</a>
+    <a class="brand" href="https://askyourdriver.com">
+      <svg viewBox="0 0 380 380" aria-hidden="true">
+        <circle cx="190" cy="190" r="135" fill="none" stroke="#E8B76B" stroke-width="14"/>
+        <circle cx="190" cy="190" r="92" fill="none" stroke="#EDF3F2" stroke-width="16"/>
+        <line x1="158" y1="178" x2="108" y2="160" stroke="#EDF3F2" stroke-width="16"/>
+        <line x1="222" y1="178" x2="272" y2="160" stroke="#EDF3F2" stroke-width="16"/>
+        <polygon points="162,194 218,194 190,278" fill="#E8B76B"/>
+        <circle cx="190" cy="184" r="34" fill="#E8B76B"/>
+        <circle cx="190" cy="184" r="13" fill="#16222B"/>
+      </svg>
+      <span>Ask<span style="color:var(--amber)">Your</span>Driver</span>
+    </a>
     <div class="eyebrow">Asheville Edition</div>
     <h1>You Just Asked Me<br>Where to Go.</h1>
     <p>Here's the full answer — the spots I actually send people to, and the tours actually worth your money.</p>
@@ -363,6 +376,30 @@ footer a{color:var(--amber)}
       <p>Listening-room vibe, great sound, tacos in the back. My pick for a low-key night.</p>
       <a class="maps" href="https://maps.google.com/?q=Grey+Eagle+Asheville">Open in Maps →</a>
     </article>
+    <article class="rec">
+      <div class="hood">Downtown · Coxe Ave</div>
+      <h3>Asheville Yards</h3>
+      <p>The big outdoor venue — national tours, food trucks, room to breathe. Check who's playing while you're in town.</p>
+      <a class="maps" href="https://maps.google.com/?q=Asheville+Yards+75+Coxe+Ave+Asheville">Open in Maps →</a>
+    </article>
+    <article class="rec">
+      <div class="hood">Biltmore Village area</div>
+      <h3>Hellbender</h3>
+      <p>Asheville's newest outdoor amphitheater — festival vibes, big-name acts, blanket-on-the-grass energy.</p>
+      <a class="maps" href="https://maps.google.com/?q=Hellbender+151+Thompson+St+Asheville">Open in Maps →</a>
+    </article>
+    <article class="rec">
+      <div class="hood">Downtown · Patton Ave</div>
+      <h3>Asheville Music Hall</h3>
+      <p>Two floors, two stages, everything from funk to EDM — and One Stop downstairs for smaller, looser shows.</p>
+      <a class="maps" href="https://maps.google.com/?q=Asheville+Music+Hall+31+Patton+Ave+Asheville">Open in Maps →</a>
+    </article>
+    <article class="rec">
+      <div class="hood">South Slope</div>
+      <h3>Eulogy</h3>
+      <p>Burial Beer's intimate venue — killer bookings (metal to raves), clean sound, balcony seats if you'd rather sit. Grab a beer next door first.</p>
+      <a class="maps" href="https://maps.google.com/?q=Eulogy+10+Buxton+Ave+Asheville">Open in Maps →</a>
+    </article>
   </section>
 
   <section id="stay">
@@ -386,6 +423,15 @@ footer a{color:var(--amber)}
 </main>
 
 <footer>
+  <svg viewBox="0 0 380 380" aria-hidden="true" style="width:34px;height:34px;margin-bottom:.6rem">
+    <circle cx="190" cy="190" r="135" fill="none" stroke="#E8B76B" stroke-width="14"/>
+    <circle cx="190" cy="190" r="92" fill="none" stroke="#EDF3F2" stroke-width="16"/>
+    <line x1="158" y1="178" x2="108" y2="160" stroke="#EDF3F2" stroke-width="16"/>
+    <line x1="222" y1="178" x2="272" y2="160" stroke="#EDF3F2" stroke-width="16"/>
+    <polygon points="162,194 218,194 190,278" fill="#E8B76B"/>
+    <circle cx="190" cy="184" r="34" fill="#E8B76B"/>
+    <circle cx="190" cy="184" r="13" fill="#16222B"/>
+  </svg><br>
   AskYourDriver.com — made by your driver, an Asheville local.<br>
   Some links are affiliate links and may earn a commission at no cost to you. It never changes what I recommend.<br>
   Drive rideshare in another city? <a href="mailto:hello@askyourdriver.com">Get your own AskYourDriver page →</a>
